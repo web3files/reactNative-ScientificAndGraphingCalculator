@@ -1,0 +1,86 @@
+
+//ui importing a png background in ./assets/calculator-icon.png
+
+/*
+import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
+
+const HomeScreen = () => {
+  return (
+    <View style={styles.container}>
+      <Image source={require("./assets/calculator.png")} style={styles.logo} />
+      <Text style={styles.title}>Scientific Graphing Calculator</Text>
+      <View style={styles.buttonsContainer}>
+        <TouchableOpacity style={styles.button}>
+          <Image
+            source={require("./assets/calculator-icon.png")}
+            style={styles.buttonIcon}
+          />
+          <Text style={styles.buttonText}>Normal Calculator</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Image
+            source={require("./assets/scientific-icon.png")}
+            style={styles.buttonIcon}
+          />
+          <Text style={styles.buttonText}>Scientific Calculator</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Image
+            source={require("./assets/graphing-icon.png")}
+            style={styles.buttonIcon}
+          />
+          <Text style={styles.buttonText}>Graphing Calculator</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#F7D8E1",
+  },
+  logo: {
+    width: 120,
+    height: 120,
+    marginBottom: 20,
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: "bold",
+    marginBottom: 30,
+    fontFamily: "Arial",
+  },
+  buttonsContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  button: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#F79489",
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 30,
+    marginBottom: 20,
+  },
+  buttonText: {
+    color: "#FFFFFF",
+    fontSize: 18,
+    fontWeight: "bold",
+    marginLeft: 10,
+    fontFamily: "Arial",
+  },
+  buttonIcon: {
+    width: 30,
+    height: 30,
+  },
+});
+
+export default HomeScreen;
+*/

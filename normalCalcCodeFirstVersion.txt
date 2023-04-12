@@ -1,0 +1,198 @@
+//Version 1
+import React, { useState } from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
+const NormalCalcScreen = () => {
+  const [result, setResult] = useState("");
+
+  const handleButtonPress = (value) => {
+    if (value === "=") {
+      calculateResult();
+    } else if (value === "C") { 
+      clearResult();
+    } else {
+      setResult(result + value);
+    }
+  };
+
+  const clearResult = () => {
+    setResult("");
+  };
+
+  const calculateResult = () => {
+    setResult(eval(result));
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.resultContainer}>
+        <Text style={styles.resultText}>{result}</Text>
+      </View>
+      <View style={styles.buttonContainer}>
+        <View style={styles.row}>
+          <TouchableOpacity
+            style={[styles.button, styles.operatorButton]}
+            onPress={() => handleButtonPress("+")}
+          >
+            <Text style={styles.buttonText}>+</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.button, styles.operatorButton]}
+            onPress={() => handleButtonPress("-")}
+          >
+            <Text style={styles.buttonText}>-</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.button, styles.operatorButton]}
+            onPress={() => handleButtonPress("*")}
+          >
+            <Text style={styles.buttonText}>*</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.button, styles.operatorButton]}
+            onPress={() => handleButtonPress("/")}
+          >
+            <Text style={styles.buttonText}>/</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.row}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => handleButtonPress("7")}
+          >
+            <Text style={styles.buttonText}>7</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => handleButtonPress("8")}
+          >
+            <Text style={styles.buttonText}>8</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => handleButtonPress("9")}
+          >
+            <Text style={styles.buttonText}>9</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.row}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => handleButtonPress("4")}
+          >
+            <Text style={styles.buttonText}>4</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => handleButtonPress("5")}
+          >
+            <Text style={styles.buttonText}>5</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => handleButtonPress("6")}
+          >
+            <Text style={styles.buttonText}>6</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.row}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => handleButtonPress("1")}
+          >
+            <Text style={styles.buttonText}>1</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => handleButtonPress("2")}
+          >
+            <Text style={styles.buttonText}>2</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => handleButtonPress("3")}
+          >
+            <Text style={styles.buttonText}>3</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.row}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => handleButtonPress("0")}
+          >
+            <Text style={styles.buttonText}>0</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => handleButtonPress(".")}
+          >
+            <Text style={styles.buttonText}>.</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.button, styles.clearButton]}
+            onPress={() => handleButtonPress("C")}
+          >
+            <Text style={[styles.buttonText, styles.clearButtonText]}>C</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.button, styles.equalButton]}
+            onPress={() => handleButtonPress("=")}
+          >
+            <Text style={[styles.buttonText, styles.equalButtonText]}>=</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  resultContainer: {
+    flex: 2,
+    backgroundColor: "#1E1240",
+    justifyContent: "center",
+    alignItems: "flex-end",
+  },
+  resultText: {
+    fontSize: 80,
+    color: "#FFFFFF",
+    marginRight: 20,
+  },
+  buttonContainer: {
+    flex: 8,
+    backgroundColor: "#3C215B",
+  },
+  row: {
+    flex: 1,
+    flexDirection: "row",
+  },
+  button: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  buttonText: {
+    fontSize: 40,
+    color: "#FFFFFF",
+  },
+  operatorButton: {
+    backgroundColor: "#6C3AB6",
+  }, 
+  clearButton: {
+    backgroundColor: "#D4AF37",
+  },
+  clearButtonText: {
+    color: "#000000",
+  },
+  equalButton: {
+    backgroundColor: "#FF7F50",
+  },
+  equalButtonText: {
+    color: "#000000",
+  },
+});
+
+export default NormalCalcScreen;
